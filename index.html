@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Personal Website</title>
-  </head>
-  <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .hover-bounce:hover {
+            animation: bounce 0.5s ease infinite;
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12 animate-fade-in" style="animation-delay: 0.2s;">
+            <img src="/api/placeholder/150/150" alt="Your Profile Picture" class="rounded-full mx-auto mb-4 hover-bounce">
+            <h1 class="text-4xl font-bold text-gray-800">Your Name</h1>
+            <p class="text-xl text-gray-600">Web Developer & Designer</p>
+        </header>
+
+        <main>
+            <section class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">About Me</h2>
+                <p class="text-gray-600">Hello! I'm a passionate web developer and designer with a keen eye for creating beautiful, functional websites. With over 5 years of experience in the industry, I specialize in front-end development and user experience design.</p>
+            </section>
+
+            <section class="mb-12 animate-fade-in" style="animation-delay: 0.6s;">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Skills</h2>
+                <div class="flex flex-wrap justify-center gap-4" id="skills-container">
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">HTML5</span>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">CSS3</span>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">JavaScript</span>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">React</span>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">Node.js</span>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">UI/UX Design</span>
+                </div>
+            </section>
+
+            <section class="mb-12 animate-fade-in" style="animation-delay: 0.8s;">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+                        <p class="text-gray-600">A brief description of your first project goes here.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+                        <p class="text-gray-600">A brief description of your second project goes here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="animate-fade-in" style="animation-delay: 1s;">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Contact Me</h2>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="far fa-envelope fa-2x"></i></a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Animate skill tags on scroll
+        function animateSkillTags() {
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach((tag, index) => {
+                setTimeout(() => {
+                    tag.style.opacity = '1';
+                    tag.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+
+        // Check if an element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const animatedElements = document.querySelectorAll('.animate-fade-in');
+            animatedElements.forEach(element => {
+                if (isInViewport(element) && element.style.opacity === '0') {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateSkillTags();
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
 </html>
