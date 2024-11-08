@@ -3,120 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .hover-bounce:hover {
-            animation: bounce 0.5s ease infinite;
-        }
-        .skill-tag {
-            transition: all 0.3s ease;
-        }
-        .skill-tag:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <title>Pi - Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-sans">
-    <div class="container mx-auto px-4 py-8">
-        <header class="text-center mb-12 animate-fade-in" style="animation-delay: 0.2s;">
-            <img src="/api/placeholder/150/150" alt="Your Profile Picture" class="rounded-full mx-auto mb-4 hover-bounce">
-            <h1 class="text-4xl font-bold text-gray-800">Pi</h1>
-            <p class="text-xl text-gray-600">Deep Learning enthusiastic</p>
-        </header>
+<body class="apple-style">
+    <nav class="apple-nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Pi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <main>
-            <section class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">About Me</h2>
-                <p class="text-gray-600">I love deep neural nets.</p>
-            </section>
-
-            <section class="mb-12 animate-fade-in" style="animation-delay: 0.6s;">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Skills</h2>
-                <div class="flex flex-wrap justify-center gap-4" id="skills-container">
-                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">Deep Learning</span>
-                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full skill-tag">Python</span>
+    <main>
+        <section class="hero-section fullscreen-section">
+            <div class="hero-content">
+                <h1 class="main-title">Pi</h1>
+                <h2 class="subtitle">Deep Learning Engineer</h2>
+                <p class="large-text">Building the future with AI</p>
+                <div class="cta-container">
+                    <a href="#projects" class="apple-button" aria-label="View my projects">Explore My Work</a>
                 </div>
-            </section>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
-            <section class="mb-12 animate-fade-in" style="animation-delay: 0.8s;">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105">
-                        <h3 class="text-xl font-semibold mb-2">Piny</h3>
-                        <p class="text-gray-600">A small language model that can tell short stories.</p>
+        <section id="about" class="feature-section">
+            <div class="section-content">
+                <h2 class="feature-title">About Me</h2>
+                <p class="feature-text">Passionate about deep learning and AI</p>
+                <div class="feature-image-wrapper">
+                    <img src="images\piny.png" alt="Profile" class="feature-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-wrapper">
+            <div class="section-grid">
+                <h2 class="section-heading">Skills</h2>
+                <div class="apple-grid">
+                    <div class="apple-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Deep Learning</h3>
+                        <p>Specialized in neural networks and machine learning algorithms</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105">
-                        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
-                        <p class="text-gray-600">Coming soon.</p>
+                    <div class="apple-card">
+                        <div class="card-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>Expert in Python development and ML frameworks</p>
                     </div>
+                    <!-- Add more skills as needed -->
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="animate-fade-in" style="animation-delay: 1s;">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Contact Me</h2>
-                <div class="flex justify-center space-x-4">
-                    <a href="https://github.com/iamnotpi/" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-github fa-2x"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-linkedin fa-2x"></i></a>
-                    <a href="https://x.com/justPi_0519" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="fab fa-twitter fa-2x"></i></a>
-                    <a href="ductrung27.dt@gmail.com" class="text-gray-600 hover:text-gray-800 transform transition duration-300 hover:scale-110"><i class="far fa-envelope fa-2x"></i></a>
+        <section id="projects" class="section-wrapper">
+    <div class="section-grid">
+        <h2 class="section-heading">Projects</h2>
+        <div class="apple-grid">
+            <a href="https://github.com/iamnotpi/piny" class="apple-card project">
+                <div class="project-image">
+                    <img src="images\piny.png" alt="Piny">
                 </div>
-            </section>
-        </main>
+                <div class="project-content">
+                    <h3>Piny</h3>
+                    <p>A small language model that can tell short stories</p>
+                    <span class="learn-more">View on GitHub<i class="fab fa-github"></i></span>
+                </div>
+            </a>
+            <!-- Repeat for other projects -->
+        </div>
     </div>
+</section>
 
-    <script>
-        // Animate skill tags on scroll
-        function animateSkillTags() {
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach((tag, index) => {
-                setTimeout(() => {
-                    tag.style.opacity = '1';
-                    tag.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        }
-
-        // Check if an element is in viewport
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Animate elements on scroll
-        function animateOnScroll() {
-            const animatedElements = document.querySelectorAll('.animate-fade-in');
-            animatedElements.forEach(element => {
-                if (isInViewport(element) && element.style.opacity === '0') {
-                    element.style.animationPlayState = 'running';
-                }
-            });
-        }
-
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', () => {
-            animateSkillTags();
-            animateOnScroll();
-            window.addEventListener('scroll', animateOnScroll);
-        });
-    </script>
+        <section id="contact" class="contact-section">
+            <div class="section-wrapper">
+                <h2 class="section-heading">Connect</h2>
+                <div class="contact-icons">
+                    <a href="https://github.com/iamnotpi" class="contact-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:ductrung27.dt@gmail.com" class="contact-link" aria-label="Email">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="https://x.com/justPi_0519" class="contact-link" aria-label="X Profile">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
