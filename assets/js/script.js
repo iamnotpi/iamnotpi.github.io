@@ -160,24 +160,37 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Time and Date
 function updateClock() {
+  // Create date object for current time
   const now = new Date();
-
-  // Extract date parts
-  const weekday = now.toLocaleDateString('en-US', { weekday: 'short' });
-  const day = now.getDate();
-  const month = now.toLocaleDateString('en-US', { month: 'long' });
-  const year = now.getFullYear();
-
-  // Format: Sat, 19 April, 2025
-  const dateString = `${weekday}, ${day} ${month}, ${year}`;
-
-  const timeString = now.toLocaleTimeString('en-US', {
+  
+  // Local Time (Australia/Sydney)
+  const options = {
+    timeZone: 'Australia/Sydney',
+    weekday: 'short',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
     hour12: true
+  };
+  
+  // Formatting Local Time
+  const sydneyDateTime = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
+  
+  // Extract the parts we need
+  const dateTimeParts = {};
+  sydneyDateTime.forEach(({ type, value }) => {
+    dateTimeParts[type] = value;
   });
-
+  
+  // Format: Sat, 19 April, 2025
+  const dateString = `${dateTimeParts.weekday}, ${dateTimeParts.day} ${dateTimeParts.month}, ${dateTimeParts.year}`;
+  
+  // Format time: 11:59:59 PM
+  const timeString = `${dateTimeParts.hour}:${dateTimeParts.minute}:${dateTimeParts.second} ${dateTimeParts.dayPeriod}`;
+  
   document.getElementById('digital-clock').innerHTML =
     `${timeString}<br>${dateString}`;
 }
