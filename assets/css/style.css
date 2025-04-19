@@ -34,12 +34,12 @@
   --eerie-black-1: hsl(0, 0%, 98%);
   --eerie-black-2: hsl(0, 0%, 96%);
   --smoky-black: hsl(0, 0%, 99%);
-  --white-1: hsl(0, 0%, 20%);
-  --white-2: hsl(0, 0%, 30%);
+  --white-1: hsl(0, 0%, 0%);
+  --white-2: hsl(0, 0%, 10%);
   --royal-blue: hsl(225, 73%, 57%); /* Old Money Blue (#4169E1) */
   --vegas-gold: hsl(225, 73%, 57%);
-  --light-gray: hsl(0, 0%, 40%);
-  --light-gray-70: hsla(0, 0%, 40%, 0.7);
+  --light-gray: hsl(0, 0%, 10%);
+  --light-gray-70: hsla(0, 0%, 10%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
   --ff-poppins: 'Poppins', sans-serif;
   --fs-1: 24px;
@@ -111,6 +111,11 @@ html {
 
 body {
   background: var(--smoky-black);
+  color: var(--white-1);
+}
+
+/* Black Text*/
+body, h1, h2, h3, h4, h5, h6, p, span, a {
   color: var(--white-1);
 }
 
@@ -418,7 +423,7 @@ main {
 }
 
 .about-text {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -477,7 +482,7 @@ main {
 }
 
 .service-item-text {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
@@ -525,7 +530,7 @@ main {
 }
 
 .testimonials-text {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -717,7 +722,7 @@ main {
 }
 
 .timeline-text {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
@@ -1009,7 +1014,7 @@ main {
 }
 
 .blog-text {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -1031,7 +1036,7 @@ main {
 }
 
 .form-input {
-  color: var(--white-2);
+  color: var(--white-1);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
