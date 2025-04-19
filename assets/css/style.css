@@ -382,6 +382,23 @@ main {
   color: var(--light-gray);
 }
 
+.clock-widget {
+  background: var(--border-color-2);
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white-2);
+  text-align: center;
+  line-height: 1.5; /* Unified tight spacing */
+}
+
+#digital-clock, #user-location {
+  display: block;
+  font-size: 13px; /* Same font size */
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   position: fixed;
   bottom: 0;

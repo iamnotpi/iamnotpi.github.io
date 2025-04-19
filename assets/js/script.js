@@ -157,3 +157,31 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Time and Date
+function updateClock() {
+  const now = new Date();
+
+  // Extract date parts
+  const weekday = now.toLocaleDateString('en-US', { weekday: 'short' });
+  const day = now.getDate();
+  const month = now.toLocaleDateString('en-US', { month: 'long' });
+  const year = now.getFullYear();
+
+  // Format: Sat, 19 April, 2025
+  const dateString = `${weekday}, ${day} ${month}, ${year}`;
+
+  const timeString = now.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+
+  document.getElementById('digital-clock').innerHTML =
+    `${timeString}<br>${dateString}`;
+}
+
+// Update immediately and every second
+updateClock();
+setInterval(updateClock, 1000);
