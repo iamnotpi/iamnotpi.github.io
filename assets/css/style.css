@@ -6,9 +6,9 @@
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsla(0, 0%, 88%, 0.251) 0%, 
-    hsla(0, 0%, 95%, 0) 100%
-  ), hsl(0, 0%, 95%);
+    hsla(0, 0%, 96%, 0.251) 0%, 
+    hsla(0, 0%, 99%, 0) 100%
+  ), hsl(0, 0%, 98%);
   --bg-gradient-blue-1: linear-gradient(
     to bottom right, 
     hsl(225, 73%, 57%) 0%, 
@@ -31,13 +31,13 @@
   );
   --jet: hsl(0, 0%, 75%);
   --onyx: hsl(0, 0%, 60%);
-  --eerie-black-1: hsl(0, 0%, 95%);
-  --eerie-black-2: hsl(0, 0%, 90%);
-  --smoky-black: hsl(0, 0%, 98%);
+  --eerie-black-1: hsl(0, 0%, 98%);
+  --eerie-black-2: hsl(0, 0%, 96%);
+  --smoky-black: hsl(0, 0%, 99%);
   --white-1: hsl(0, 0%, 20%);
   --white-2: hsl(0, 0%, 30%);
   --royal-blue: hsl(225, 73%, 57%); /* Old Money Blue (#4169E1) */
-  --vegas-gold: hsl(45, 54%, 58%);
+  --vegas-gold: hsl(225, 73%, 57%);
   --light-gray: hsl(0, 0%, 40%);
   --light-gray-70: hsla(0, 0%, 40%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -711,7 +711,7 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--text-gradient-yellow);
+  background: var(--text-gradient-blue);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--jet);
 }
@@ -755,7 +755,7 @@ main {
 }
 
 .skill-progress-fill {
-  background: var(--text-gradient-yellow);
+  background: var(--text-gradient-blue);
   height: 100%;
   border-radius: inherit;
 }
@@ -1097,11 +1097,11 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-btn:hover {
-  background: var(--bg-gradient-yellow-1);
+  background: var(--bg-gradient-blue-1);
 }
 
 .form-btn:hover::before {
-  background: var(--bg-gradient-yellow-2);
+  background: var(--bg-gradient-blue-2);
 }
 
 .form-btn:disabled {
