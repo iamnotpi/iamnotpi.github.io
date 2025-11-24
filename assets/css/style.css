@@ -265,6 +265,10 @@ main {
   border-radius: 20px;
 }
 
+.avatar-box img {
+  border-radius: 20px;
+}
+
 .info-content .name {
   color: var(--white-1);
   font-size: var(--fs-3);
@@ -1203,6 +1207,7 @@ textarea.form-input::-webkit-resizer {
   
   .avatar-box img {
     width: 120px;
+    border-radius: 30px;
   }
   
   .info-content .name {
@@ -1592,6 +1597,7 @@ textarea.form-input::-webkit-resizer {
   
   .avatar-box img {
     width: 150px;
+    border-radius: 30px;
   }
   
   .info-content .name {

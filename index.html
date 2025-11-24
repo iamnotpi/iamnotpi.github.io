@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <script>
+         const SITE_DESCRIPTION = "Duc Trung Vu - Student. I'm a third-year undergraduate student currently pursing a degree in Computer Science in Hanoi University of Science and Technology with a strong passion for AI research and a deep curiosity for the mathematical and algorithmic foundations of intelligent systems. I focus on deep learning, foundation models, and generative modeling — especially diffusion models and large language models.";
+         const ABOUT_TEXT = "Hello, I'm Duc Trung Vu, a third-year undergraduate student currently pursing a degree in Computer Science in Hanoi University of Science and Technology. I have a strong passion for AI research and a deep curiosity for the mathematical and algorithmic foundations of intelligent systems. I focus on deep learning, foundation models, and generative modeling — especially diffusion models and large language models.";
+         
+         // Function to populate meta tags and content
+         function populateDescriptions() {
+            try {
+               // Update meta descriptions
+               const metaDesc = document.querySelector('meta[name="description"]');
+               const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+               const ogDesc = document.querySelector('meta[property="og:description"]');
+               
+               if (metaDesc) metaDesc.setAttribute('content', SITE_DESCRIPTION);
+               if (twitterDesc) twitterDesc.setAttribute('content', SITE_DESCRIPTION);
+               if (ogDesc) ogDesc.setAttribute('content', SITE_DESCRIPTION);
+               
+               // Update about text
+               const aboutTextElement = document.querySelector('#about-description');
+               if (aboutTextElement) {
+                  aboutTextElement.textContent = ABOUT_TEXT;
+               }
+            } catch (error) {
+               console.error('Error updating descriptions:', error);
+            }
+         }
+         
+         // Execute immediately and when DOM is ready for better compatibility
+         if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', populateDescriptions);
+         } else {
+            populateDescriptions();
+         }
+      </script>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="google-site-verification" content="8vavQFEFhQc2DCb2vAMIb0S9cEsDb-SmO-yLF6i9X8Y" />
-      <title>Bishwa - Bhusal | Student - Developer - Researcher</title>
-      <meta name="description" content="Bishwa Bhusal - Student | Developer | Researcher.  I'm a Graduate Research Student at the University of Technology Sydney (UTS), focusing on Cybersecurity and IoT. I enjoy exploring how human behavior, risk, and technology interact—especially in complex, connected environments.">
-      <meta name="Keyword" Content= "bishwa bhusal, frontend developer, android developer, resume, bachelor in computer applications, lumbini city college, butwal, kathmandu, nepal, entry-level developer, java developer, python programmer, github bishwofic, linkedin bishwofic, instagram bishwofic, @bishwofic, bishwofic, bishwo.tech, bishwa bhusal butwal, bishwa bhusal bca, cherishos developer, custom roms redmi note 8 pro, aroom app, bloodhub app, erp project springboot react, opensource contributor, cybersecurity researcher, iot researcher, charles darwin university, student researcher, infoxit intern, cyber insurance framework, iso/iec 27001 certified, ethical hacker cisco, tafe cybersecurity, devops trainer, graphics design instructor, hackathon nepathya, bishwa bhusal portfolio, spring boot react developer, android rom developer, bishwa bhusal nepali developer, cybersecurity in iot, blog bishwofic, qualitative research in cybersecurity, helpdesk specialist, it support butwal"/>
-      <meta name="author" content="Bishwa Bhusal">
-      <meta name="copyright" content="Bishwa Bhusal">
+      <title>Duc Trung Vu | Student </title>
+      <meta name="description" content="Duc Trung Vu - Student. I'm a third-year undergraduate student at Hanoi University of Science and Technology with a strong passion for AI research and a deep curiosity for the mathematical and algorithmic foundations of intelligent systems. I focus on deep learning, foundation models, and generative modeling — especially diffusion models and large language models.">
+      <meta name="keywords" content="Duc Trung Vu, Student"/>
+      <meta name="author" content="Duc Trung Vu">
+      <meta name="copyright" content="Duc Trung Vu">
       <meta name="robots" content="index,follow">
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:site" content="@bishwofic">
-      <meta name="twitter:title" content="Bishwo">
-      <meta name="twitter:description" content="Bishwa Bhusal - Student | Developer | Researcher.  I'm a Graduate Research Student at the University of Technology Sydney (UTS), focusing on Cybersecurity and IoT. I enjoy exploring how human behavior, risk, and technology interact—especially in complex, connected environments.">
-      <meta property="og:url" content="https://bishwo.info.np">
+      <meta name="twitter:site" content="@iamnotpi">
+      <meta name="twitter:title" content="Duc Trung Vu">
+      <meta name="twitter:description" content="Duc Trung Vu - Student. I'm a third-year undergraduate student at Hanoi University of Science and Technology with a strong passion for AI research and a deep curiosity for the mathematical and algorithmic foundations of intelligent systems. I focus on deep learning, foundation models, and generative modeling — especially diffusion models and large language models.">
+      <meta property="og:url" content="https://iamnotpi.github.io">
       <meta property="og:type" content="portfolio">
-      <meta property="og:title" content="Bishwa Bhusal - Student | Developer | Researcher">
-      <meta property="og:description" content="Bishwa Bhusal - Student | Developer | Researcher.  I'm a Graduate Research Student at the University of Technology Sydney (UTS), focusing on Cybersecurity and IoT. I enjoy exploring how human behavior, risk, and technology interact—especially in complex, connected environments."/>
-      <meta property="og:site_name" content="Bishwa Bhusal"/>
+      <meta property="og:title" content="Duc Trung Vu - Student">
+      <meta property="og:description" content="Duc Trung Vu - Student. I'm a third-year undergraduate student at Hanoi University of Science and Technology with a strong passion for AI research and a deep curiosity for the mathematical and algorithmic foundations of intelligent systems. I focus on deep learning, foundation models, and generative modeling — especially diffusion models and large language models."/>
+      <meta property="og:site_name" content="Duc Trung Vu"/>
       <link rel="apple-touch-icon" href="./assets/icon/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon/android-chrome-192x192.png"/>
@@ -27,22 +60,20 @@
       <link rel="shortcut icon" href="./assets/icon/favicon.ico"/>
       <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
       <link rel="stylesheet" href="./assets/css/style.css">
-      <link rel="canonical" href="https://saksham.thedev.id">
+      <link rel="canonical" href="https://iamnotpi.github.io">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
       <script type="application/ld+json">
          {
            "@context": "https://schema.org/",
            "@type": "Person",
-           "name": "Bishwa Bhusal",
-           "url": "https://bishwo.info.np",
+           "name": "Duc Trung Vu",
+           "url": "https://iamnotpi.github.io",
            "image": "https://media.licdn.com/dms/image/D4E03AQEEyeXUW-diVw/profile-displayphoto-shrink_400_400/0/1688099037601?e=2147483647&v=beta&t=-SzRiojlhUB7vTEjjQEYV4ru0pG5XblGJafUX3mvOvM",
            "sameAs": [
-             "https://facebook.com/bishwofic",
-             "https://x.com/bishwofic",
-             "https://www.linkedin.com/in/bishwofic",
-             "https://www.instagram.com/bishwofic",
-             "https://github.com/bishwofic",
-             "https://profiles.uts.edu.au/student_Bishwa.Bhusal"
+               "https://facebook.com/iamtrung204/",
+               "https://x.com/justPi_0519",
+               "https://www.linkedin.com/in/duc-trung-vu-pi/",
+               "https://github.com/iamnotpi",
            ]  
          }
            
@@ -53,10 +84,10 @@
          <aside class="sidebar" data-sidebar>
             <div class="sidebar-info">
                <figure class="avatar-box">
-                  <img src="./assets/avatar.jpg" alt="Bishwa Bhusal Avatar" width="80">
+                  <img src="./assets/pi.jpg" alt="Duc Trung Vu Avatar" width="80">
                </figure>
                <div class="info-content">
-                  <h1 class="name" title="Bishwa Bhusal">Bishwa Bhusal</h1>
+                  <h1 class="name" title="Duc Trung Vu">Duc Trung Vu</h1>
                   <p class="title">Student | Developer | Researcher</p>
                </div>
                <button class="info_more-btn" data-sidebar-btn>
@@ -73,7 +104,7 @@
                      </div>
                      <div class="contact-info">
                         <p class="contact-title">Email</p>
-                        <a href="mailto:bishwobhusal75@gmail.com" class="contact-link">*****@gmail.com</a>
+                        <a href="mailto:ductrung27.work@gmail.com" class="contact-link">ductrung27.work@gmail.com</a>
                      </div>
                   </li>
                   <li class="contact-item">
@@ -82,39 +113,30 @@
                      </div>
                      <div class="contact-info">
                         <p class="contact-title">Location</p>
-                        <address>Sydney, Australia</address>
+                        <address>Hanoi, Vietnam</address>
                      </div>
                   </li>
                </ul>
                <div class="separator"></div>
                <ul class="social-list">
                   <li class="social-item">
-                     <a href="https://www.facebook.com/bishwofic" class="social-link">
+                     <a href="https://www.facebook.com/iamnotpi" class="social-link">
                         <ion-icon name="logo-facebook"></ion-icon>
                      </a>
                   </li>
+
                   <li class="social-item">
-                     <a href="https://www.instagram.com/bishwofic/" class="social-link">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                     </a>
-                  </li>				  
-                  <li class="social-item">
-                     <a href="https://twitter.com/bishwofic" class="social-link">
+                     <a href="https://twitter.com/iamnotpi" class="social-link">
                         <ion-icon name="logo-twitter"></ion-icon>
                      </a>
                   </li>
                   <li class="social-item">
-                     <a href="https://www.t.me/bishwofic/" class="social-link">
-                        <ion-icon name="send-sharp"></ion-icon>
-                     </a>
-                  </li>
-                  <li class="social-item">
-                     <a href="https://www.linkedin.com/in/bishwoficass="social-link">
+                     <a href="https://www.linkedin.com/in/iamnotpi" class="social-link">
                         <ion-icon name="logo-linkedin"></ion-icon>
                      </a>
                   </li>
                   <li class="social-item">
-                     <a href="https://github.com/bishwofic" class="social-link">
+                     <a href="https://github.com/iamnotpi" class="social-link">
                         <ion-icon name="logo-github"></ion-icon>
                      </a>
                   </li>
@@ -143,11 +165,11 @@
                      <button class="navbar-link" data-nav-link>Resume</button>
                   </li>
                   <li class="navbar-item">
-                     <button class="navbar-link" data-nav-link>Portfolio</button>
+                     <button class="navbar-link" data-nav-link>Projects</button>
                   </li>
-                  <!--     <li class="navbar-item">
+                  <li class="navbar-item">
                      <button class="navbar-link" data-nav-link>Blog</button>
-                     </li> -->
+                  </li>
                   <li class="navbar-item">
                      <button class="navbar-link" data-nav-link>Contact</button>
                   </li>
@@ -161,15 +183,13 @@
                   <h2 class="h2 article-title">About me</h2>
                </header>
                <section class="about-text">
-                  <p>
-                     Hey, Bishwo here. I'm a Graduate Research Student at the University of Technology Sydney (UTS), focusing on Cybersecurity and IoT. I enjoy exploring how human behavior, risk, and technology interact—especially in complex, connected environments.
+                  <p id="about-description">
+                     <!-- Content will be populated by JavaScript -->
+                  </p>
+                  <!-- <p>
                   </p>
                   <p>
-                     My current research looks at Cyber-insurance Frameworks for dynamic IoT networks, aiming to make digital systems safer and more resilient. I like turning technical challenges into practical, impactful solutions.
-                  </p>
-                  <p>
-                     Outside of research, I have experience in Software Development, IT Support, and Cybersecurity, and I’ve worked on projects ranging from ar e-commerce to ERP systems and blood donation platforms.
-                  </p>
+                  </p> -->
                </section>
                <!--
                   - service
@@ -235,9 +255,9 @@
                      </button>
                   </section>
                </div>
-               <button class="form-btn" type="submit" disabled data-form-btn>
+               <button class="form-btn" type="submit">
                   <ion-icon name="paper-plane"></ion-icon>
-                  <span> <a href="Bishwa_Bhusal.pdf" title="Bishwa Bhusal Resume" style="color:hsl(225, 73%, 57%)">Download Resume</a> </span> 
+                  <span> <a href="Bishwa_Bhusal.pdf" title="Duc Trung Vu Resume" style="color:hsl(225, 73%, 57%)">Download Resume</a> </span> 
                </button>
             </article>
             <!--
@@ -256,24 +276,17 @@
                   </div>
                   <ol class="timeline-list">
                      <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">University of Technology Sydney</h4>
-                        <span>2024 — Present</span>
+                        <h4 class="h4 timeline-item-title">Hanoi University of Science and Technology</h4>
+                        <span>2022 — Present</span>
                         <p class="timeline-text">
-                           Currently pursuing Higher Degree by Research (MRes).
+                           Currently pursuing a Bachelor's degree in Computer Science.
                         </p>
                      </li>
                      <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Lumbini City College</h4>
-                        <span>2018 — 2024</span>
+                        <h4 class="h4 timeline-item-title">Nguyen Trai Gifted High School</h4>
+                        <span>2019 — 2022</span>
                         <p class="timeline-text">
-                           Graduated with a Bachelor's degree in Computer Applications, achieving a GPA of 3.44
-                        </p>
-                     </li>
-                     <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Deep Boarding High School</h4>
-                        <span>2014 — 2018</span>
-                        <p class="timeline-text">
-                           Completed School Leaving and +2 Certificate.
+                           Graduated from the Physics-Streamed Class (Gifted Program).
                         </p>
                      </li>
                   </ol>
@@ -281,30 +294,56 @@
                <section class="timeline">
                   <div class="title-wrapper">
                      <div class="icon-box">
-                        <ion-icon name="book-outline"></ion-icon>
+                        <ion-icon name="trophy-outline"></ion-icon>
                      </div>
-                     <h3 class="h3">Experience</h3>
+                     <h3 class="h3">Awards & Achievements</h3>
+                  </div>
+                  <ol class="timeline-list">
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Academic Achievement Scholarship</h4>
+                        <span>Academic Year: 2022-2023 (Semester 2), 2023-2024 (Semester 2), 2024–2025 (Semester 1)</span>
+                        <p class="timeline-text">
+                          Awarded for excellent academic performance in the Computer Science program.
+                        </p>
+                      </li>
+                      
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Vietnamese Physics Olympiad</h4>
+                        <span>2022</span>
+                        <p class="timeline-text">
+                           Awarded Second Prize in Vietnamese Physics Olympiad.
+                        </p>
+                     </li>
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Vietnamese Physics Olympiad</h4>
+                        <span>2021</span>
+                        <p class="timeline-text">
+                           Awarded Third Prize in Vietnamese Physics Olympiad.
+                        </p>
+                     </li>
+                  </ol>
+               </section>
+               
+               <section class="timeline">
+                  <div class="title-wrapper">
+                     <div class="icon-box">
+                        <ion-icon name="code-working-outline"></ion-icon>
+                     </div>
+                     <h3 class="h3">Projects & Experience</h3>
                   </div>
                   <ol class="timeline-list">
                      <li class="timeline-item">
                         <h4 class="h4 timeline-item-title">Open Source Contributor</h4>
-                        <span>2016 — Present</span>
+                        <span>2021 — Present</span>
                         <p class="timeline-text">
-                           Actively contributing to various open source projects, developing and refining my technical skills in the process.
+                           Actively contributing to various open source projects, developing and refining technical skills through collaborative development.
                         </p>
                      </li>
                      <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">IT Support & Admissions</h4>
-                        <span>2023 — 2024</span>
+                        <h4 class="h4 timeline-item-title">Personal Projects Development</h4>
+                        <span>2022 — Present</span>
                         <p class="timeline-text">
-                           Supported IT operations and handled student admissions, combining technical support with front-line service and data management.
-                        </p>
-                     </li>
-                     <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Java Intern</h4>
-                        <span>2019 — 2021</span>
-                        <p class="timeline-text">
-                           Developed RESTful APIs and maintained MVC architecture, contributing to backend solutions and enhancing system performance.
+                           Developed multiple applications including BloodHub, ARoom, and web development projects showcasing full-stack development skills.
                         </p>
                      </li>
                   </ol>
@@ -354,9 +393,9 @@
             <!--
                - #PORTFOLIO
                -->
-            <article class="portfolio" data-page="portfolio">
+            <article class="portfolio" data-page="projects">
                <header>
-                  <h2 class="h2 article-title">Portfolio</h2>
+                  <h2 class="h2 article-title">Projects</h2>
                </header>
                <section class="projects">
                   <ul class="filter-list">
@@ -397,15 +436,14 @@
                   </div>
                   <ul class="project-list">
                      <li class="project-item  active" data-filter-item data-category="web development">
-                        <a href="https://github.com/bishwofic/LMS">
+                        <a href="https://github.com/iamnotpi/Piny">
                            <figure class="project-img">
                               <div class="project-item-icon-box">
                                  <ion-icon name="eye-outline"></ion-icon>
                               </div>
                               <img src="./assets/lms.png" alt="search" loading="lazy">
                            </figure>
-                           <h3 class="project-title">Library Management System</h3>
-                           <p class="project-category">Web development</p>
+                           <h3 class="project-title">Piny</h3>
                         </a>
                      </li>
                      <li class="project-item  active" data-filter-item data-category="web development">
@@ -416,32 +454,7 @@
                               </div>
                               <img src="./assets/saman.png" alt="crawler" loading="lazy">
                            </figure>
-                           <h3 class="project-title">Saman: e-commerce</h3>
-                           <p class="project-category">Web development</p>
-                        </a>
-                     </li>
-                     <li class="project-item  active" data-filter-item data-category="applications">
-                        <a href="https://github.com/bishwofic/bloodhub">
-                           <figure class="project-img">
-                              <div class="project-item-icon-box">
-                                 <ion-icon name="eye-outline"></ion-icon>
-                              </div>
-                              <img src="./assets/bloodhub.png" alt="Reverse" loading="lazy">
-                           </figure>
-                           <h3 class="project-title">BloodHub</h3>
-                           <p class="project-category">Applications</p>
-                        </a>
-                     </li>
-                     <li class="project-item  active" data-filter-item data-category="applications">
-                        <a href="https://github.com/bishwofic/ARoom">
-                           <figure class="project-img">
-                              <div class="project-item-icon-box">
-                                 <ion-icon name="eye-outline"></ion-icon>
-                              </div>
-                              <img src="./assets/aroom.png" alt="Indexer" loading="lazy">
-                           </figure>
-                           <h3 class="project-title">ARoom</h3>
-                           <p class="project-category">Applications</p>
+                           <h3 class="project-title">NoCaST</h3>
                         </a>
                      </li>
                   </ul>
@@ -450,8 +463,7 @@
             <!--
                - #BLOG
                -->
-            <!--
-               <article class="blog" data-page="blog">
+            <article class="blog" data-page="blog">
                
                  <header>
                    <h2 class="h2 article-title">Blog</h2>
@@ -465,23 +477,23 @@
                        <a href="#">
                
                          <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                           <img src="./assets/images/blog-1.jpg" alt="Coming soon" loading="lazy">
                          </figure>
                
                          <div class="blog-content">
                
                            <div class="blog-meta">
-                             <p class="blog-category">Design</p>
+                             <p class="blog-category">Coming soon</p>
                
                              <span class="dot"></span>
                
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
+                             <time datetime="2025-07-10">Jul 10, 2025</time>
                            </div>
                
-                           <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+                           <h3 class="h3 blog-item-title">Coming soon</h3>
                
                            <p class="blog-text">
-                             Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                             Coming soon
                            </p>
                
                          </div>
@@ -489,151 +501,12 @@
                        </a>
                      </li>
                
-                     <li class="blog-post-item">
-                       <a href="#">
-               
-                         <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                         </figure>
-               
-                         <div class="blog-content">
-               
-                           <div class="blog-meta">
-                             <p class="blog-category">Design</p>
-               
-                             <span class="dot"></span>
-               
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
-                           </div>
-               
-                           <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-               
-                           <p class="blog-text">
-                             Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                           </p>
-               
-                         </div>
-               
-                       </a>
-                     </li>
-               
-                     <li class="blog-post-item">
-                       <a href="#">
-               
-                         <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                         </figure>
-               
-                         <div class="blog-content">
-               
-                           <div class="blog-meta">
-                             <p class="blog-category">Design</p>
-               
-                             <span class="dot"></span>
-               
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
-                           </div>
-               
-                           <h3 class="h3 blog-item-title">Design digest #80</h3>
-               
-                           <p class="blog-text">
-                             Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                           </p>
-               
-                         </div>
-               
-                       </a>
-                     </li>
-               
-                     <li class="blog-post-item">
-                       <a href="#">
-               
-                         <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                         </figure>
-               
-                         <div class="blog-content">
-               
-                           <div class="blog-meta">
-                             <p class="blog-category">Design</p>
-               
-                             <span class="dot"></span>
-               
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
-                           </div>
-               
-                           <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-               
-                           <p class="blog-text">
-                             Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                           </p>
-               
-                         </div>
-               
-                       </a>
-                     </li>
-               
-                     <li class="blog-post-item">
-                       <a href="#">
-               
-                         <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                         </figure>
-               
-                         <div class="blog-content">
-               
-                           <div class="blog-meta">
-                             <p class="blog-category">Design</p>
-               
-                             <span class="dot"></span>
-               
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
-                           </div>
-               
-                           <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-               
-                           <p class="blog-text">
-                             Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                           </p>
-               
-                         </div>
-               
-                       </a>
-                     </li>
-               
-                     <li class="blog-post-item">
-                       <a href="#">
-               
-                         <figure class="blog-banner-box">
-                           <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                         </figure>
-               
-                         <div class="blog-content">
-               
-                           <div class="blog-meta">
-                             <p class="blog-category">Design</p>
-               
-                             <span class="dot"></span>
-               
-                             <time datetime="2022-02-23">Fab 23, 2022</time>
-                           </div>
-               
-                           <h3 class="h3 blog-item-title">Design digest #79</h3>
-               
-                           <p class="blog-text">
-                             Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                           </p>
-               
-                         </div>
-               
-                       </a>
-                     </li>
                
                    </ul>
                
                  </section>
                
-               </article>      -->
+               </article>
             <!--
                - #CONTACT
                -->
@@ -643,7 +516,11 @@
                </header>
                <section class="contact-form">
                   <h3 class="h3 form-title">Contact Form</h3>
-                  <form action="https://formspree.io/f/xanekrkv" method="POST" class="form" data-form>
+                  <form action="https://formspree.io/f/mnnvkwde" method="POST" class="form" data-form>
+                     <!-- Formspree Configuration -->
+                     <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                     <input type="hidden" name="_next" value="https://iamnotpi.github.io">
+                     
                      <div class="input-wrapper">
                         <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
                         <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>

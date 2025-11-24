@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://bishwo.info.np/sitemap.xml
+Sitemap: https://iamnotpi.github.io/sitemap.xml
